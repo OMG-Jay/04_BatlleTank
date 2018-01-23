@@ -2,9 +2,10 @@
 
 #pragma once
 
-#include "Tank.h"
 #include "CoreMinimal.h"
+#include "Tank.h"
 #include "GameFramework/PlayerController.h"
+#include "Runtime/Engine/Classes/Engine/World.h"
 #include "TankPlayerController.generated.h" //Must be last include
 
 /**
@@ -33,5 +34,10 @@ private:
 	
 	UPROPERTY(EditAnywhere)
 	float CrossHairYLocation = 0.3333;
+
+	UPROPERTY(EditAnywhere)
+	float LineTraceRange = 1000000; //10 km
 	
+	bool GetLookDirection(FVector2D ScreenLocation, FVector& LookDirection) const;
+	bool GetLookVectorHitLocation(FVector LookDirection, FVector& HitLocation) const;
 };

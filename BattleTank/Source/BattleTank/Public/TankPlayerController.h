@@ -3,11 +3,12 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Tank.h"
 #include "GameFramework/PlayerController.h"
 #include "Runtime/Engine/Classes/Engine/World.h"
 #include "TankPlayerController.generated.h" //Must be last include
 
+//Foward Declarations
+class ATank;
 /**
  * 
  */

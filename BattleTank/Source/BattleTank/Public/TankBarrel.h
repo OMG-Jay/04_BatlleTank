@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Components/StaticMeshComponent.h"
+#include "Runtime/Engine/Classes/Engine/World.h"
 #include "TankBarrel.generated.h"
 
 /**
@@ -15,11 +16,12 @@ class BATTLETANK_API UTankBarrel : public UStaticMeshComponent
 	GENERATED_BODY()
 
 public:
-	void Elevate(float DegreesPerSecond);
+	//-1 is max downwards movement, +1 is max upwards movement
+	void Elevate(float RelativeSpeed);
 
 private:
 	UPROPERTY(EditAnywhere, Category = Setup)
-	float MaxDegreesPerSecond = 20;
+	float MaxDegreesPerSecond = 5;
 
 
 	UPROPERTY(EditAnywhere, Category = Setup)
@@ -28,5 +30,4 @@ private:
 
 	UPROPERTY(EditAnywhere, Category = Setup)
 		float MaxDegreesElevation = 30;
-	
 };

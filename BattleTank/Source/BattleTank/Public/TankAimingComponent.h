@@ -6,9 +6,11 @@
 #include "Runtime/Engine/Classes/GameFramework/Actor.h"
 #include "Runtime/Engine/Classes/Kismet/GameplayStatics.h"
 #include "Components/ActorComponent.h"
+#include "Runtime/Engine/Classes/Engine/World.h"
 #include "TankAimingComponent.generated.h"
 
 class UTankBarrel; //Foward Delcaration
+class UTankTurret;
 
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
@@ -22,12 +24,16 @@ public:
 
 	void SetBarrelReference(UTankBarrel* BarrelToSet);
 
+	void SetTurretReference(UTankTurret* TurretToSet);
+
 	void AimAt(FVector HitLocation, float LaunchSpeed);
 
 protected:
 
 private:
 	UTankBarrel * Barrel = nullptr;
+
+	UTankTurret * Turret = nullptr;
 
 	void MoveBarrelTowards(FVector AimDirection);
 };

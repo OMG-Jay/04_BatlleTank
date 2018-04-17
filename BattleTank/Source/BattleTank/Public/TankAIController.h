@@ -9,9 +9,6 @@
 #include "Runtime/Engine/Classes/Engine/World.h"
 #include "TankAIController.generated.h"
 
-//Foward Declarations
-class ATank;
-
 /**
  * 
  */
